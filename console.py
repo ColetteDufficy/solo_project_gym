@@ -14,7 +14,7 @@ member_repository.delete_all()
 member1 = Member('Ollie', 'Hodges', 'o.hodges@email.com', True)
 member_repository.save(member1)
 
-member2 = Member('Mary', 'OBrien', 'm.obrien@email.com', True)
+member2 = Member('Mary', 'OBrien', 'm.obrien@email.com', False)
 member_repository.save(member2)
 
 member3 = Member('Dora', 'Allman', 'd.allman@email.com', True)
