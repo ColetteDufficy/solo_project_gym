@@ -10,12 +10,15 @@ app.register_blueprint(gyms_blueprint)
 app.register_blueprint(sessions_blueprint)
 app.register_blueprint(members_blueprint)
 
-@app.route('/')
+@app.route('/index')
 def home():
     return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
+    
+
     
     
     
