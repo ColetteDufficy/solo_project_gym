@@ -36,6 +36,14 @@ def select(id):
     return member
 
 
+# to edit a specific member details, where ID number is X
+def update(member):
+    sql = "UPDATE members SET ( first_name, last_name, email, active_member ) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [member.first_name, member.last_name, member.email, member.active_member, member.id]
+    run_sql(sql, values)
+    
+
+
 # delete all members
 def delete_all():
     sql = "DELETE FROM members"

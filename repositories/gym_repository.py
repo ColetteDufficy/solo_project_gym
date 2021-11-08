@@ -4,7 +4,7 @@ import repositories.member_repository as member_repository
 import repositories.session_repository as session_repository
 
 
-
+# CREATING A NEW 
 def save(gym):
     sql = "INSERT INTO gyms ( member_id, session_id) VALUES ( %s, %s ) RETURNING id"
     values = [gym.member.id, gym.session.id]
@@ -12,7 +12,7 @@ def save(gym):
     gym.id = results[0]['id']
     return gym
 
-
+#select all members and sessions
 def select_all():
     gyms = []
 

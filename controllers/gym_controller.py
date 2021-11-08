@@ -22,8 +22,8 @@ def new_task():
     sessions = session_repository.select_all()
     return render_template("gyms/new.html", members = members, sessions = sessions)
 
-# CREATE
-# POST '/visits'
+# CREATE 
+# POST '/gyms'
 @gyms_blueprint.route("/gyms",  methods=['POST'])
 def create_task():
     member_id = request.form['member_id']
@@ -35,8 +35,8 @@ def create_task():
     return redirect('/gyms')
 
 
-# DELETE
-# DELETE '/visits/<id>'
+# DELETE A SESSION
+# DELETE '/gyms/<id>'
 @gyms_blueprint.route("/gyms/<id>/delete", methods=['POST'])
 def delete_task(id):
     gym_repository.delete(id)
