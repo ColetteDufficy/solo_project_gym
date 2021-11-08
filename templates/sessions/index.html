@@ -1,7 +1,15 @@
-{% extends 'base.html'%}
+{% extends "base.html" %}
 
 {% block content %}
-<h1>NEW sessions index page</h1>
-<p>this is the start of the sessions page content</p>
-<p>need to add the "sessions edit" button here</p>
+
+<p>The following gym sessions are running tonight:</p>
+{% for session in sessions %}
+ <p>{{session.session_name}} is {{session.time}} long, with a maximum class size of {{session.max_capacity}}.</p>
+ <p><a href="/sessions/{{session.id}}/book">Book {{session.session_name}} now!</a></p>
+ <p><a href="/sessions/{{session.id}}/edit">Edit {{session.session_name}} session details here</a></p>
+ 
+ {% endfor %}
+
+ 
 {% endblock %}
+
