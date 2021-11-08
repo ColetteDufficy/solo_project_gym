@@ -7,5 +7,5 @@ class Member:
         self.active_member = active_member
         self.id = id
 
-    def active_member(self):
-        self.active = True
+    def active_membership(self):
+        self.active_member = True

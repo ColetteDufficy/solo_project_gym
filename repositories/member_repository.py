@@ -1,15 +1,7 @@
+import pdb
 from db.run_sql import run_sql
 from models.session import Session
 from models.member import Member
-
-
-# save a new member
-def save(member):
-    sql = "INSERT INTO members( first_name, last_name, email, active_member ) VALUES ( %s, %s, %s, %s ) RETURNING id"
-    values = [member.first_name, member.last_name, member.email, member.active_member]
-    results = run_sql( sql, values )
-    member.id = results[0]['id']
-    return member
 
 
 # select all members
@@ -22,6 +14,17 @@ def select_all():
         member = Member(row['first_name'], row['last_name'], row['email'], row['active_member'], row['id'])
         members.append(member)
     return members
+
+
+# save a new member
+def save(member):
+    sql = "INSERT INTO members( first_name, last_name, email, active_member ) VALUES ( %s, %s, %s, %s ) RETURNING id"
+    values = [member.first_name, member.last_name, member.email, member.active_member]
+    results = run_sql( sql, values )
+    member.id = results[0]['id']
+    return member
+
+
 
 
 # select a specific member

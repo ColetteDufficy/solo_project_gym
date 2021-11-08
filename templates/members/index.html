@@ -2,11 +2,25 @@
 
 {% block content %}
 
+
 {% for member in members %}
+{% if member.active_member == True %}
  <p>{{member.first_name}} {{member.last_name}} is an active member of the gym.</p>
  <p><a href="/members/{{member.id}}/edit">Edit {{member.first_name}}'s details here</a></p>
+ {% endif %}
+ {% endfor %}
 
+<hr>
 
-{% endfor%}
+{% for member in members %}
+{% if member.active_member != True %}
+
+ <p>{{member.first_name}} {{member.last_name}} is NOT an active member of the gym.</p>
+ <p><a href="/members/{{member.id}}/edit">Edit {{member.first_name}}'s details here</a></p>
+
+ {% endif %}
+ {% endfor %}
+
 
 {% endblock %}
+

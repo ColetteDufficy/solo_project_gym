@@ -1,3 +1,4 @@
+import pdb
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from controllers.session_controller import sessions
@@ -10,18 +11,43 @@ members_blueprint = Blueprint("members", __name__)
 
 
 # see list of all members
-@members_blueprint.route("/members")
+@members_blueprint.route("/members", methods=['GET'])
 def members():
     members = member_repository.select_all() 
     return render_template("members/index.html", members = members)
 
 
+@members_blueprint.route("/members/new")
+def new_member_form():
+    return render_template("members/new.html", members = members)
+
+    
+    
+# NEW
+# GET '/members/new'
+@members_blueprint.route("/members", methods=['POST'])
+def new_member():
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    email = request.form['email']
+    active_member = request.form['active_member']
+
+    # member = member_repository.select(member_id)
+    member = Member(first_name, last_name, email, active_member)
+    members = member_repository.save(member)
+    # return redirect ("members", all_members = members)
+    return redirect ("members")
+
+
+
+
 # SHOW for example an updated members listing
 # GET '/members/<id>'
-@members_blueprint.route("/members/<id>", methods=['GET'])
-def show_member(id):
-    member = member_repository.select(id)
-    return render_template("members/show.html", member = member)
+# @members_blueprint.route("/members/<id>", methods=['GET'])
+# def show_member(id):
+#     pdb.set_trace()
+#     member = member_repository.select(id)
+#     return render_template("members/show.html", member = member)
 
 
 
