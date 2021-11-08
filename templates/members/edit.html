@@ -1,8 +1,57 @@
-{% extends 'base.html'%}
-
+{% extends "base.html" %}
 {% block content %}
-<h1>Members edit page</h1>
-<p>this is the edit page for exisiting members</p>
-<p>need to add the "save" button here</p>
+
+<form action="/members/{{member.id}}" method="post">
+  <div>
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" value="{{member.first_name}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" value="{{member.last_name}}" required autofocus>
+  </div>
+  
+  <div>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" value="{{member.email}}" required>
+  </div>
+
+  <div>
+    <label for="active_member">Active member:</label>
+    <select id="active_member" name="active_member">
+
+      <option value="true"
+        {% if member.active_member == True %} selected="selected" {% endif %}>
+        True
+      </option>
+
+      <option value="false"
+        {% if member.active_member == False %} selected="selected" {% endif %}>
+        False
+      </option>
+
+    </select>
+  </div>
+
+  <!-- <div>
+    <label for="member">Member:</label>
+    <select id="member" name="member_id">
+      {% for member in members %}
+        <option value="{{ member.id }}"
+          {% if gym.member.id== member.id %} selected="selected"{% endif %}>
+          {{ member.first_name }}
+        </option>
+      {% endfor %}
+    </select>
+  </div> -->
+
+  <button type="submit">Update Member Details</button>
+
+</form>
+
 {% endblock %}
+
+
+
 

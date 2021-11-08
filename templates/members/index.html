@@ -1,8 +1,12 @@
-{% extends 'base.html'%}
+{% extends "base.html" %}
 
 {% block content %}
-<h1>NEW members index page</h1>
-<p>this is the start of the new members index page content</p>
-<p>need to add the "members edit" button here</p>
-{% endblock %}
 
+{% for member in members %}
+ <p>{{member.first_name}} {{member.last_name}} is an active member of the gym.</p>
+ <p><a href="/members/{{member.id}}/edit">Edit {{member.first_name}}'s details here</a></p>
+
+
+{% endfor%}
+
+{% endblock %}

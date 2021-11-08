@@ -20,6 +20,9 @@ member_repository.save(member2)
 member3 = Member('Dora', 'Allman', 'd.allman@email.com', True)
 member_repository.save(member3)
 
+member4 = Member('Jack', 'Jackman', 'j.jackman@email.com', True)
+member_repository.save(member4)
+
 session1 = Session('Spinning', '45mins', 5)
 session_repository.save(session1)
 
