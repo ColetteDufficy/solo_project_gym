@@ -1,4 +1,4 @@
-DROP TABLE gyms;
+DROP TABLE bookings;
 DROP TABLE members;
 DROP TABLE sessions;
 
@@ -19,7 +19,7 @@ CREATE TABLE sessions (
     max_capacity INT
 );
 
-CREATE TABLE gyms (
+CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
     member_id INT REFERENCES members(id) ON DELETE CASCADE,
     session_id INT REFERENCES sessions(id) ON DELETE CASCADE

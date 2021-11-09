@@ -1,13 +1,13 @@
 import pdb
 from models.session import Session
 from models.member import Member
-from models.gym import Gym
+from models.booking import Booking
 
 import repositories.session_repository as session_repository
 import repositories.member_repository as member_repository
-import repositories.gym_repository as gym_repository
+import repositories.booking_repository as booking_repository
 
-gym_repository.delete_all()
+booking_repository.delete_all()
 session_repository.delete_all()
 member_repository.delete_all()
 
@@ -32,14 +32,14 @@ session_repository.save(session2)
 session3 = Session('Zumba', '60mins', 15)
 session_repository.save(session3)
 
-gym1 = Gym(member1, session2)
-gym_repository.save(gym1)
+booking1 = Booking(member1, session2)
+booking_repository.save(booking1)
 
-gym2 = Gym(member2, session1)
-gym_repository.save(gym2)
+booking2 = Booking(member2, session1)
+booking_repository.save(booking2)
 
-gym3 = Gym(member3, session2)
-gym_repository.save(gym3)
+booking3 = Booking(member3, session2)
+booking_repository.save(booking3)
 
 
 # pdb.set_trace()

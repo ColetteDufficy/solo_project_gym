@@ -23,7 +23,7 @@ def new_session_form():
 
 # NEW
 # POST '/sessions/new' 
-# This is adding a new session to the gyms total list of sessions.
+# This is adding a new session to the bookings total list of sessions.
 @sessions_blueprint.route("/sessions", methods=['POST'])
 def new_session():
     session_name = request.form['session_name']

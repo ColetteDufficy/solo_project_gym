@@ -21,11 +21,11 @@ def members():
 def new_member_form():
     return render_template("members/new.html", members = members)
 
-    
+
     
 # NEW
 # POST '/members/new' 
-# This is adding a new member to the gyms total list of members.
+# This is adding a new member to the bookings total list of members.
 @members_blueprint.route("/members", methods=['POST'])
 def new_member():
     first_name = request.form['first_name']
@@ -37,7 +37,7 @@ def new_member():
     member = Member(first_name, last_name, email, active_member)
     members = member_repository.save(member)
     # return redirect ("members", all_members = members)
-    return redirect ("members")
+    return redirect ("/members")
 
 
 # EDIT

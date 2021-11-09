@@ -27,7 +27,6 @@ def save(member):
 
 
 
-
 # to edit a specific member details, where ID number is X
 def update(member):
     sql = "UPDATE members SET ( first_name, last_name, email, active_member ) = (%s, %s, %s, %s) WHERE id = %s"
@@ -61,7 +60,7 @@ def select(id):
 def sessions(member):
     sessions = []
 
-    sql = "SELECT sessions.* FROM sessions INNER JOIN gyms ON gyms.session_id = sessions.id WHERE member_id = %s"
+    sql = "SELECT sessions.* FROM sessions INNER JOIN bookings ON bookings.session_id = sessions.id WHERE member_id = %s"
     values = [member.id]
     results = run_sql(sql, values)
     

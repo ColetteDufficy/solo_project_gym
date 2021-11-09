@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h4>Bookings</h4>
+
+<p>List of all bookings to appear here</p>
+
+
+
+{% for booking in bookings %}
+        <p>{{ member.first_name }} is booked into {{ session.session_name }} </p>
+
+{% endfor %}
+
+
+{% endblock %}
+
+
+
