@@ -5,12 +5,13 @@
 
 <p>List of all bookings to appear here</p>
 
+{{ session.session_name }}  
 
 
-{% for booking in bookings %}
-        <p>{{ member.first_name }} is booked into {{ session.session_name }} </p>
+<!-- {% for booking in bookings %}
+        <p>{{ booking.member.first_name }} is booked into {{ booking.session.session_name }} </p>
 
-{% endfor %}
+{% endfor %} -->
 
 
 {% endblock %}
