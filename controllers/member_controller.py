@@ -65,7 +65,7 @@ def update_member(id):
     # member = member_repository.select(member_id)
     member = Member(first_name, last_name, email, active_member, id)
     member_repository.update(member)
-    return redirect("members")
+    return redirect("/members")
 
 
 
