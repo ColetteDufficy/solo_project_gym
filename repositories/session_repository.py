@@ -56,11 +56,10 @@ def delete_all():
     
     
     
-# join the sessions db with the members db
 def members(session):
     members = []
 
-    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE session_id = %s"
+    sql = "SELECT members.* FROM members INNER JOIN visits ON visits.member_id = members.id WHERE session_id = %s"
     values = [session.id]
     results = run_sql(sql, values)
     

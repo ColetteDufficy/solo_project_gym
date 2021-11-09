@@ -22,7 +22,15 @@ def bookings():
 #     return render_template("bookings/new.html", bookings = bookings)
 
 
-# NEW
+# show a selected member
+@bookings_blueprint.route("/bookings/<id>")
+def show(id):
+    member = member_repository.select(id)
+    sessions = member_repository.sessions(member)
+    return render_template("bookings/show.html", member=member, sessions=sessions)
+
+
+# NEW booking
 # GET '/visits/new'
 @bookings_blueprint.route("/bookings/new", methods=['GET'])
 def new_session():
@@ -30,7 +38,7 @@ def new_session():
     sessions = session_repository.select_all()
     return render_template("bookings/new.html", members = members, sessions = sessions)
 
-# CREATE 
+# CREATE a booking
 # POST '/bookings'
 @bookings_blueprint.route("/bookings",  methods=['POST'])
 def create_task():
