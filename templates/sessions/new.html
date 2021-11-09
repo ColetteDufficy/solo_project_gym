@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block content %}
 
 <form action="/sessions" method="post">
@@ -10,7 +11,7 @@
 
     <div>
         <label for="time">Duration of gym session:</label>
-        <input type="time" id="time" name="time" placeholder=" " required autofocus>
+        <input type="text" id="time" name="time" placeholder=" mins" required autofocus>
     </div>
   
     <div>

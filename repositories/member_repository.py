@@ -1,10 +1,9 @@
-import pdb
 from db.run_sql import run_sql
 from models.session import Session
 from models.member import Member
 
 
-# select all members
+# To see list of all members
 def select_all():
     members = []
 
@@ -16,7 +15,8 @@ def select_all():
     return members
 
 
-# save a new member
+
+# To save a new member, eg adding anew member to the over all members list.
 def save(member):
     sql = "INSERT INTO members( first_name, last_name, email, active_member ) VALUES ( %s, %s, %s, %s ) RETURNING id"
     values = [member.first_name, member.last_name, member.email, member.active_member]
@@ -27,6 +27,23 @@ def save(member):
 
 
 
+
+# to edit a specific member details, where ID number is X
+def update(member):
+    sql = "UPDATE members SET ( first_name, last_name, email, active_member ) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [member.first_name, member.last_name, member.email, member.active_member, member.id]
+    run_sql(sql, values)
+    
+
+
+
+# delete all members - dont use this here!
+def delete_all():
+    sql = "DELETE FROM members"
+    run_sql(sql)
+    
+    
+    
 # select a specific member
 def select(id):
     member = None
@@ -38,19 +55,6 @@ def select(id):
         member = Member(result['first_name'], result['last_name'], result['email'], result['active_member'], result['id'] )
     return member
 
-
-# to edit a specific member details, where ID number is X
-def update(member):
-    sql = "UPDATE members SET ( first_name, last_name, email, active_member ) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [member.first_name, member.last_name, member.email, member.active_member, member.id]
-    run_sql(sql, values)
-    
-
-
-# delete all members
-def delete_all():
-    sql = "DELETE FROM members"
-    run_sql(sql)
     
 
 # join the members db with the sessions db

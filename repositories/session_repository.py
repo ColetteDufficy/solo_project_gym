@@ -3,14 +3,7 @@ from models.session import Session
 from models.member import Member
 
 
-def save(session):
-    sql = "INSERT INTO sessions(session_name, time, max_capacity) VALUES ( %s, %s, %s) RETURNING id"
-    values = [session.session_name, session.time, session.max_capacity]
-    results = run_sql( sql, values )
-    session.id = results[0]['id']
-    return session
-
-
+# To see list of all session
 def select_all():
     sessions = []
 
@@ -23,6 +16,28 @@ def select_all():
     return sessions
 
 
+
+# To save a new session, eg adding a new session to the over all sessions list.
+def save(session):
+    sql = "INSERT INTO sessions(session_name, time, max_capacity) VALUES ( %s, %s, %s) RETURNING id"
+    values = [session.session_name, session.time, session.max_capacity]
+    results = run_sql( sql, values )
+    session.id = results[0]['id']
+    return session
+
+
+
+# to edit a specific sessions details, where ID number is X
+def update(session):
+    sql = "UPDATE sessions SET ( session_name, time, max_capacity ) = (%s, %s, %s) WHERE id = %s"
+    values = [session.session_name, session.time, session.max_capacity, session.id]
+    run_sql(sql, values)
+    
+
+
+
+
+# select a specific session
 def select(id):
     session = None
     sql = "SELECT * FROM sessions WHERE id = %s"
@@ -34,11 +49,14 @@ def select(id):
     return session
 
 
+# delete all sessions - dont use this here!
 def delete_all():
     sql = "DELETE FROM sessions"
     run_sql(sql)
     
     
+    
+# join the sessions db with the members db
 def members(session):
     members = []
 
