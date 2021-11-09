@@ -7,7 +7,7 @@ import repositories.session_repository as session_repository
 
 # Creating A New Booking 
 def save(booking):
-    sql = "INSERT INTO bookings2 ( member_id, session_id ) VALUES ( %s, %s ) RETURNING id"
+    sql = "INSERT INTO bookings ( member_id, session_id ) VALUES ( %s, %s ) RETURNING id"
     values = [booking.member.id, booking.session.id]
     results = run_sql( sql, values )
     booking.id = results[0]['id']
