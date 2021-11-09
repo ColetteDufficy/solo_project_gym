@@ -3,13 +3,11 @@
 {% block content %}
 <h4>Bookings</h4>
 
-<p>List of all bookings to appear here</p>
-
-{{ session.session_name }}  
+<p><b>List of all bookings to appear here:</b></p>
 
 
 {% for booking in bookings %}
-        <p>{{ booking.member.first_name }} is booked into {{ booking.session.session_name }} </p>
+        <p>{{ booking.member.first_name }} {{ booking.member.last_name }} is booked into {{ booking.session.session_name }} </p>
 
 {% endfor %} 
 
