@@ -31,6 +31,19 @@ def select_all():
 
 
 
+# # select a specific session
+# def select(id):
+#     booking = None
+#     sql = "SELECT * FROM bookings WHERE id = %s"
+#     values = [id]
+#     result = run_sql(sql, values)[0]
+
+#     if result is not None:
+#         booking = Booking(result['member_id'], result['session_id'] )
+#     return booking
+
+    
+
 # deleting all bookings - dont use here!
 def delete_all():
     sql = "DELETE FROM bookings"

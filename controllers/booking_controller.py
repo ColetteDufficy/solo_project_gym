@@ -8,18 +8,13 @@ import repositories.session_repository as session_repository
 bookings_blueprint = Blueprint("bookings", __name__)
 
 
-# this is to view all bookings
+# INDEX this is to view all bookings
 @bookings_blueprint.route("/bookings")
 def bookings():
     bookings = booking_repository.select_all()
     return render_template("bookings/index.html", bookings = bookings)
 
 
-# ******THIS BREAKS MY 'NEW BOOKINGS PAGE' BY REMOVING THE DROP DOWNS*******
-# this is to hold the new bookigns form
-# @bookings_blueprint.route("/bookings/new")
-# def new_booking_form():
-#     return render_template("bookings/new.html", bookings = bookings)
 
 
 # show a selected member
@@ -49,6 +44,21 @@ def create_task():
     booking = Booking(member, session)
     booking_repository.save(booking)
     return redirect('/bookings')
+
+
+# select a specific session
+# @bookings_blueprint.route("/bookings/<id>/show")
+# def show(id):
+#     session = session_repository.select(id)
+#     members = session_repository.members(session)
+#     return render_template("bookings/show.html", session=session, members=members)
+
+
+# DELETE
+@bookings_blueprint.route("/bookings/<id>/delete", methods=["POST"])
+def delete_booking(id):
+    booking_repository.delete(id)
+    return redirect("/bookings")
 
 
 # DELETE A SESSION

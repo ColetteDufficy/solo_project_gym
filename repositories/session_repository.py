@@ -27,14 +27,12 @@ def save(session):
 
 
 
-# to edit a specific sessions details, where ID number is X
+# to edit a specific sessions detail (where ID number is X)
 def update(session):
     sql = "UPDATE sessions SET ( session_name, time, max_capacity ) = (%s, %s, %s) WHERE id = %s"
     values = [session.session_name, session.time, session.max_capacity, session.id]
     run_sql(sql, values)
     
-
-
 
 
 # select a specific session
@@ -47,6 +45,7 @@ def select(id):
     if result is not None:
         session = Session(result['session_name'], result['time'], result['max_capacity'], result['id'] )
     return session
+
 
 
 # delete all sessions - dont use this here!

@@ -9,6 +9,11 @@
 {% for booking in bookings %}
         <p>{{ booking.member.first_name }} {{ booking.member.last_name }} is booked into {{ booking.session.session_name }} </p>
 
+    <form action="/bookings/{{ booking.id }}/delete" method="POST">
+        <input type="submit" value="Delete Booking">
+    </form>
+
+
 {% endfor %} 
 
 
