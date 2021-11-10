@@ -4,7 +4,7 @@
 
 <p>The following booking sessions are running tonight:</p>
 {% for session in sessions %}
- <p><b>{{session.session_name}}</b> is {{session.time}} long, with a maximum class size of {{session.max_capacity}}.</p>
+ <p><a href="/sessions/{{session.id}}">{{session.session_name}}</a>  is {{session.time}} long, with a maximum class size of {{session.max_capacity}}.</p>
 
  <p><a href="/sessions/{{session.id}}/edit">Edit {{session.session_name}} session details here</a></p>
  

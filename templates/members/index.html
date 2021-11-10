@@ -2,7 +2,7 @@
 
 {% block content %}
 
-
+<h2>Active Members </h2>
 {% for member in members %}
 {% if member.active_member == True %}
  <p>{{member.first_name}} {{member.last_name}} is an active member of the gym.</p>
@@ -11,6 +11,8 @@
  {% endfor %}
 
 <hr>
+
+<h2>Non-active Members </h2>
 
 {% for member in members %}
 {% if member.active_member != True %}

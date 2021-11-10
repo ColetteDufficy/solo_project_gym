@@ -11,7 +11,7 @@ members_blueprint = Blueprint("members", __name__)
 # To see list of all members
 @members_blueprint.route("/members", methods=['GET'])
 def members():
-    members = member_repository.select_all() 
+    members = member_repository.select_all_alphabetical() 
     return render_template("members/index.html", members = members)
 
 
