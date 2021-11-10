@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
+<h2>Tonight's Classes</h2>
 
-<p>The following booking sessions are running tonight:</p>
+<p><b>The following booking sessions are running tonight:</b></p>
 {% for session in sessions %}
- <p><a href="/sessions/{{session.id}}">{{session.session_name}}</a>  is {{session.time}} long, with a maximum class size of {{session.max_capacity}}.</p>
+ <p><a href="/sessions/{{session.id}}">{{session.session_name}}</a>: Maximum class size of {{session.max_capacity}}.</p>
+ <p>{{session.session_name}} is a {{session.time}} class.</p>
 
- <p><a href="/sessions/{{session.id}}/edit">Edit {{session.session_name}} session details here</a></p>
- 
+ <p><a href="/sessions/{{session.id}}/edit">Edit Session Details</a></p>
+ <hr>
  {% endfor %}
 
  

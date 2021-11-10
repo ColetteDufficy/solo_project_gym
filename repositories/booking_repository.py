@@ -31,6 +31,22 @@ def select_all():
 
 
 
+# To see list of all members alphabetical
+def select_all_alphabetical():
+    bookings = []
+
+    sql = "SELECT * FROM bookings ORDER BY member_id"
+    results = run_sql(sql)
+
+    for row in results:
+        member = member_repository.select(row['member_id'])
+        session = session_repository.select(row['session_id'])
+        booking = Booking(member, session, row['id'])
+        bookings.append(booking)
+    return bookings
+
+
+
 # # select a specific session
 # def select(id):
 #     booking = None

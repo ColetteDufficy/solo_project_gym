@@ -8,10 +8,10 @@ import repositories.session_repository as session_repository
 bookings_blueprint = Blueprint("bookings", __name__)
 
 
-# INDEX this is to view all bookings
+# INDEXthis is to view all bookings
 @bookings_blueprint.route("/bookings")
 def bookings():
-    bookings = booking_repository.select_all()
+    bookings = booking_repository.select_all_alphabetical()
     return render_template("bookings/index.html", bookings = bookings)
 
 
