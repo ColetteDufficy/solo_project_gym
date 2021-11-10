@@ -35,7 +35,7 @@ session_repository.save(session3)
 booking1 = Booking(member1, session2)
 booking_repository.save(booking1)
 
-booking2 = Booking(member2, session1)
+booking2 = Booking(member1, session1)
 booking_repository.save(booking2)
 
 booking3 = Booking(member3, session2)

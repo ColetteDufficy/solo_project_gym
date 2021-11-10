@@ -28,6 +28,20 @@ def select_all_alphabetical():
 
 
 
+def select_all_active():
+    members = []
+
+    sql = "SELECT * FROM members WHERE active_member IN ('True')"
+    results = run_sql(sql)
+    for row in results:
+        member = Member(row['first_name'], row['last_name'], row['email'], row['active_member'], row['id'])
+        members.append(member)
+    return members
+
+
+
+
+
 # To save a new member, eg adding anew member to the over all members list.
 def save(member):
     sql = "INSERT INTO members( first_name, last_name, email, active_member ) VALUES ( %s, %s, %s, %s ) RETURNING id"

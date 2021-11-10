@@ -27,8 +27,8 @@ def bookings():
 # GET '/bookings/new'
 @bookings_blueprint.route("/bookings/new", methods=['GET'])
 def new_session():
-    members = member_repository.select_all()
-    sessions = session_repository.select_all()
+    members = member_repository.select_all_active()
+    sessions = session_repository.select_all_alphabetical()
     return render_template("bookings/new.html", members = members, sessions = sessions)
 
 # CREATE a booking

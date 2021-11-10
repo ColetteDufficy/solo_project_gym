@@ -16,6 +16,18 @@ def select_all():
     return sessions
 
 
+def select_all_alphabetical():
+    sessions = []
+
+    sql = "SELECT * FROM sessions ORDER BY session_name"
+    results = run_sql(sql)
+
+    for row in results:
+        session = Session(row['session_name'], row['time'], row['max_capacity'], row['id'])
+        sessions.append(session)
+    return sessions
+
+
 
 # To save a new session, eg adding a new session to the over all sessions list.
 def save(session):

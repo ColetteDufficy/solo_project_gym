@@ -10,7 +10,7 @@ sessions_blueprint = Blueprint("sessions", __name__)
 # To see list of all sessions
 @sessions_blueprint.route("/sessions")
 def sessions():
-    sessions = session_repository.select_all() 
+    sessions = session_repository.select_all_alphabetical() 
     return render_template("sessions/index.html", sessions = sessions)
 
 

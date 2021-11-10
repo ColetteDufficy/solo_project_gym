@@ -9,7 +9,7 @@
 <h3>Members booked into {{session.session_name}}</h3>
 
 {% for member in members  %}
-    {{member.first_name}}
+    {{member.first_name}} {{member.last_name}}
 
 {% endfor  %}
 
