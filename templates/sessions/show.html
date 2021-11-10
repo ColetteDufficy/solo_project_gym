@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h4>Booking Details</h4>
-<h6>Select a gym session to see booked members:</h6>
+
+<h3>Gym Session Name:</h3>
 
 {{session.session_name}}
+<hr>
+<h3>Members booked into {{session.session_name}}</h3>
+
+{% for member in members  %}
+    {{member.first_name}}
+
+{% endfor  %}
 
 {% endblock %}
