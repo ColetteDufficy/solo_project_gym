@@ -67,8 +67,11 @@ def update_session(id):
 
 
 
-# @sessions_blueprint.route("/sessions/<id>")
-# def show(id):
-#     session = session_repository.select(id)
-#     members = session_repository.members(session)
-#     return render_template("sessions/show.html", session=session, members=members)
+@sessions_blueprint.route("/sessions/<id>")
+def show(id):
+    session = session_repository.select(id)
+    return render_template("sessions/show.html", session = session)
+
+
+    # session = session_repository.select(id)
+    # members = session_repository.members(session)
