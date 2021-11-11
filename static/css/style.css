@@ -15,12 +15,12 @@
   }
 
   .img-text p {
-    color: white;
+    color: yellow;
     position: absolute;
-    width: 500px;
+    width: 450px;
     font-size: xx-large;
     top: 40%;
-    left: 20%;
+    left: 15%;
   }
 
   header {
