@@ -1,11 +1,16 @@
 # solo_project_gym
 
-# Running Instructions and Software used:
-Chrome
-Python and Flask used a language and framework
-Visual Code Studio to view code
-PostgreSQL used to geberate and view databases
+# Targets:
+Object oriented programming with Python
+Test Driven Development
+Web Programming (REST, MVC)
+Interacting with a PostgreSQL database (CRUD)
 
+# Built using:
+HTML / CSS
+Python
+Flask
+PostgreSQL and the psycopg package
 
 # Project Brief:
 Gym
@@ -13,9 +18,9 @@ A local gym has asked you to build a piece of software to help them to manage me
 
 MVP
 The app should allow the gym to create and edit Members
+The app should show a list of all upcoming classes
 The app should allow the gym to create and edit Classes
 The app should allow the gym to book members on specific classes
-The app should show a list of all upcoming classes
 The app should show all members that are booked in for a particular class
 
 Inspired By
