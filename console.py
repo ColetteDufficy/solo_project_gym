@@ -42,4 +42,3 @@ booking3 = Booking(member3, session2)
 booking_repository.save(booking3)
 
 
-# pdb.set_trace()

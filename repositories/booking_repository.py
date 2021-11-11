@@ -45,19 +45,6 @@ def select_all_alphabetical():
         bookings.append(booking)
     return bookings
 
-
-
-# # select a specific session
-# def select(id):
-#     booking = None
-#     sql = "SELECT * FROM bookings WHERE id = %s"
-#     values = [id]
-#     result = run_sql(sql, values)[0]
-
-#     if result is not None:
-#         booking = Booking(result['member_id'], result['session_id'] )
-#     return booking
-
     
 
 # deleting all bookings - dont use here!

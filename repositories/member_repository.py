@@ -82,20 +82,6 @@ def select(id):
 
     
 
-# join the members db with the sessions db
-# def sessions(member):
-#     sessions = []
-
-#     sql = "SELECT sessions.* FROM sessions INNER JOIN bookings ON bookings.session_id = sessions.id WHERE member_id = %s"
-#     values = [member.id]
-#     results = run_sql(sql, values)
-    
-#     for row in results:
-#         session = Session(row['session_name'], row['time'], row['max_capacity'], row['id'])
-#         sessions.append(session)
-    
-#     return sessions
-
 
 
 

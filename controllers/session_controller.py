@@ -72,7 +72,3 @@ def show(id):
     session = session_repository.select(id)
     members = session_repository.members(session)
     return render_template("sessions/show.html", session = session, members = members)
-
-
-    # session = session_repository.select(id)
-    # members = session_repository.members(session)

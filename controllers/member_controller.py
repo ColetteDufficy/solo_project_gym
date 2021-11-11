@@ -68,10 +68,3 @@ def update_member(id):
     return redirect("/members")
 
 
-
-
-# @members_blueprint.route("/members/<id>")
-# def show(id):
-#     member = member_repository.select(id)
-#     sessions = member_repository.sessions(member)
-#     return render_template("members/show.html", member=member, sessions=sessions)
