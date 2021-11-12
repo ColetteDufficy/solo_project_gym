@@ -1,27 +1,40 @@
 {% extends "base.html" %}
+
 {% block content %}
 
-<form action="/sessions/{{session.id}}" method="post">
-  <div>
-    <label for="session_name">Booking session Name:</label>
-    <input type="text" id="session_name" name="session_name" value="{{session.session_name}}" required autofocus>
-  </div>
+<div class="img-container-sessions-index"> 
 
-  <div>
-    <label for="time">Duration of booking session:</label>
-    <input type="text" id="time" name="time" value="{{session.time}}" required autofocus>
-  </div>
-  
-  <div>
-    <label for="max_capacity">Booking session maximum capacity:</label>
-    <input type="number" id="max_capacity" name="max_capacity" value="{{session.max_capacity}}" required>
-  </div>
 
-  <button type="submit">Update Booking Session Details</button>
-  <!-- <button type="submit">Delete this booking session</button> -->
+        <form action="/sessions/{{session.id}}" method="post">
+          <div class="img-text-new-sessions-index">
+            <h2>Update Class Details</h2>
+            <br>
 
-</form>
+            <div>
+                <label for="session_name">Booking session Name:</label>
+                <input type="text" id="session_name" name="session_name" value="{{session.session_name}}" required autofocus>
+            </div>
 
+            <br>
+
+            <div>
+                <label for="time">Duration of booking session:</label>
+                <input type="text" id="time" name="time" value="{{session.time}}" required autofocus>
+            </div>
+            
+            <br>
+
+            <div>
+                <label for="max_capacity">Booking session maximum capacity:</label>
+                <input type="number" id="max_capacity" name="max_capacity" value="{{session.max_capacity}}" required>
+            </div>
+
+            <br>
+
+            <button type="submit">Update Class Details</button>
+          </div>
+        </form>
+</div>
 {% endblock %}
 
 

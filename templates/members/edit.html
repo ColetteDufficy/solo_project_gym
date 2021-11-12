@@ -1,43 +1,63 @@
 {% extends "base.html" %}
+
+
 {% block content %}
 
-<form action="/members/{{member.id}}" method="post">
-  <div>
-    <label for="first_name">First Name:</label>
-    <input type="text" id="first_name" name="first_name" value="{{member.first_name}}" required autofocus>
-  </div>
-
-  <div>
-    <label for="last_name">Last Name:</label>
-    <input type="text" id="last_name" name="last_name" value="{{member.last_name}}" required autofocus>
-  </div>
-  
-  <div>
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="email" value="{{member.email}}" required>
-  </div>
-
-  <div>
-    <label for="active_member">Active member:</label>
-    <select id="active_member" name="active_member">
-
-      <option value="true"
-        {% if member.active_member == True %} selected="selected" {% endif %}>
-        True
-      </option>
-
-      <option value="false"
-        {% if member.active_member == False %} selected="selected" {% endif %}>
-        False
-      </option>
-
-    </select>
-  </div>
+<div class="img-container-members-index"> 
 
 
-  <button type="submit">Update Member Details</button>
+      <form action="/members/{{member.id}}" method="post">
+        <div class="img-text-members-index">
+          <h2>Update Member Details</h2>
 
-</form>
+        <br>
+
+        <div>
+          <label for="first_name">First Name:</label>
+          <input type="text" id="first_name" name="first_name" value="{{member.first_name}}" required autofocus>
+        </div>
+
+        <br>
+
+        <div>
+          <label for="last_name">Last Name:</label>
+          <input type="text" id="last_name" name="last_name" value="{{member.last_name}}" required autofocus>
+        </div>
+
+        <br>
+
+        <div>
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" value="{{member.email}}" required>
+        </div>
+
+        <br>
+
+        <div>
+          <label for="active_member">Active member:</label>
+          <select id="active_member" name="active_member">
+
+            <option value="true"
+              {% if member.active_member == True %} selected="selected" {% endif %}>
+              True
+            </option>
+
+            <option value="false"
+              {% if member.active_member == False %} selected="selected" {% endif %}>
+              False
+            </option>
+
+          </select>
+        </div>
+        
+        <br>
+
+        <button type="submit">Update Member Details</button>
+      </div>
+      </form>
+    </div>
+
+
 
 {% endblock %}
 

@@ -34,6 +34,7 @@
     margin: 0px;
   }
 
+
   .img-container-bookings-index{
     height: 65vh;
     background :url(../images/gym_4_white.jpg) no-repeat;
@@ -62,6 +63,28 @@
     left: 5%;
   }
 
+  .img-text-members-index > h2  {
+    color: rgb(115, 3, 6);
+    font-variant: small-caps;
+    font-size: x-large;
+  }
+
+  .img-text-new-members-index {
+    color: rgb(62, 62, 62);
+    position: absolute;
+    width: 390px;
+    font-size: small;
+    top: 25%;
+    left: 5%;
+  }
+
+  .img-text-new-members-index > h2  {
+    color: rgb(115, 3, 6);
+    font-variant: small-caps;
+    font-size: x-large;
+  }
+  
+
   .img-text-sessions-index  {
     color: rgb(62, 62, 62);
     position: absolute;
@@ -71,6 +94,28 @@
     left: 5%;
   }
 
+  .img-text-sessions-index > h2  {
+    color: rgb(170, 65, 4);
+    font-variant: small-caps;
+    font-size: x-large;
+  }
+
+  .img-text-new-sessions-index {
+    color: rgb(62, 62, 62);
+    position: absolute;
+    width: 390px;
+    font-size: small;
+    top: 25%;
+    left: 5%;
+  }
+
+  .img-text-new-sessions-index > h2  {
+    color: rgb(170, 65, 4);
+    font-variant: small-caps;
+    font-size: x-large;
+  }
+  
+
   .img-text-bookings-index  {
     color: rgb(62, 62, 62);
     position: absolute;
@@ -78,6 +123,28 @@
     font-size: small;
     top: 25%;
     left: 5%;
+  }
+
+  .img-text-bookings-index > h2  {
+    color: rgb(6, 98, 129);
+    font-variant: small-caps;
+    font-size: x-large;
+  }
+
+
+  .img-text-new-bookings-index {
+    color: rgb(62, 62, 62);
+    position: absolute;
+    width: 390px;
+    font-size: small;
+    top: 25%;
+    left: 5%;
+  }
+
+  .img-text-new-bookings-index > h2  {
+    color: rgb(6, 98, 129);
+    font-variant: small-caps;
+    font-size: x-large;
   }
 
     

@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 
-{% block content %}
+        {% block content %}
 
-<h3>Gym Session Name:</h3>
+        <div class="img-container-sessions-index"> 
+            <div class="img-text-new-sessions-index">
 
-{{session.session_name}}
-<hr>
-<h3>Members booked into {{session.session_name}}</h3>
-
-{% for member in members  %}
-    {{member.first_name}} {{member.last_name}}
-
-{% endfor  %}
+                <h2>{{session.session_name}}</h2>
+                <br>
+                <h2>Whos booked into tonights class</h2>
+                    <br>
+                    {% for member in members  %}
+                        {{member.first_name}} {{member.last_name}}
+                        <br>
+                    {% endfor  %}
+                    <br>
 
 {% endblock %}
