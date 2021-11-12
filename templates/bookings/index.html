@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h4>Bookings</h4>
 
-<p><b>List of all bookings to appear here:</b></p>
+<div class="img-container-bookings-index"> 
+    <div class="img-text-bookings-index">
 
-
-{% for booking in bookings %}
-        <p>{{ booking.member.first_name }} {{ booking.member.last_name }} is booked into {{ booking.session.session_name }} </p>
-
-    <form action="/bookings/{{ booking.id }}/delete" method="POST">
-        <input type="submit" value="Delete Booking">
-    </form>
-
-
-{% endfor %} 
+        <h2>Tonight's Bookings</h2>
+        <br>
+            {% for booking in bookings %}
+                <p><b>{{ booking.member.first_name }} {{ booking.member.last_name }}</b> is booked into <b>{{ booking.session.session_name }}</b> </p>
+                    <form action="/bookings/{{ booking.id }}/delete" method="POST">
+                    <input type="submit" value="Delete Booking">
+                    </form>
+                <br>
+            {% endfor %} 
+        
+    </div>
+</div>
 
 
 {% endblock %}

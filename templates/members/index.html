@@ -2,27 +2,33 @@
 
 {% block content %}
 
-<h2>Active Members </h2>
-{% for member in members %}
-{% if member.active_member == True %}
- <p>{{member.first_name}} {{member.last_name}} is an active member of the gym.</p>
- <p><a href="/members/{{member.id}}/edit">Edit {{member.first_name}}'s details here</a></p>
- {% endif %}
- {% endfor %}
+<div class="img-container-members-index"> 
+    <div class="img-text-members-index">
 
-<hr>
+        <h2>Active Gym Membership</h2>
+        <br>
+            {% for member in members %}
+                {% if member.active_member == True %}
+                <p>{{member.first_name}} {{member.last_name}}</p>
+                <p><a href="/members/{{member.id}}/edit">Edit {{member.first_name}}'s details</a></p>
+                <br>
+                {% endif %}
+            {% endfor %}
+        <br>
+        <br>
+        <br>
 
-<h2>Non-active Members </h2>
-
-{% for member in members %}
-{% if member.active_member != True %}
-
- <p>{{member.first_name}} {{member.last_name}} is NOT an active member of the gym.</p>
- <p><a href="/members/{{member.id}}/edit">Edit {{member.first_name}}'s details here</a></p>
-
- {% endif %}
- {% endfor %}
-
+        <h2>Inactive Gym Membership </h2>
+        <br>
+            {% for member in members %}
+                {% if member.active_member != True %}
+                <p>{{member.first_name}} {{member.last_name}} does <b>NOT</b> have active membership.</p>
+                <p><a href="/members/{{member.id}}/edit">Edit {{member.first_name}}'s details</a></p>
+                <br>
+                {% endif %}
+            {% endfor %}
+    </div>
+</div>
 
 {% endblock %}
 

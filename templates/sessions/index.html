@@ -1,17 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Tonight's Classes</h2>
 
-<p><b>The following booking sessions are running tonight:</b></p>
-{% for session in sessions %}
- <p><a href="/sessions/{{session.id}}">{{session.session_name}}</a>: Maximum class size of {{session.max_capacity}}.</p>
- <p>{{session.session_name}} is a {{session.time}} class.</p>
+    <div class="img-container-sessions-index"> 
+        <div class="img-text-sessions-index">
 
- <p><a href="/sessions/{{session.id}}/edit">Edit Session Details</a></p>
- <hr>
- {% endfor %}
 
- 
+            <h2>Tonight's Classes</h2>
+            <br>
+                {% for session in sessions %}
+                    <p><b>{{session.session_name}}:</b></p>
+                        <p>{{session.time}} class; maximum class size: {{session.max_capacity}}</p>
+                    <p></p>
+                    <p><a href="/sessions/{{session.id}}">Members Booked</a></p>
+                    <p><a href="/sessions/{{session.id}}/edit">Edit Class Details</a></p>
+                    <br>
+
+                {% endfor %}
+
+
+        </div>
+    </div>
+    
 {% endblock %}
 
