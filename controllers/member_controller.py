@@ -31,12 +31,12 @@ def new_member():
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     email = request.form['email']
-    active_member = request.form['active_member']
+    # active_member = request.form['active_member']
+    active_member = request.form.get('active_member')
 
-    # member = member_repository.select(member_id)
+
     member = Member(first_name, last_name, email, active_member)
     members = member_repository.save(member)
-    # return redirect ("members", all_members = members)
     return redirect ("/members")
 
 
