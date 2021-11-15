@@ -30,10 +30,8 @@ def new_session():
     time = request.form['time']
     max_capacity = request.form['max_capacity']
 
-    # member = member_repository.select(member_id)
     session = Session(session_name, time, max_capacity)
     sessions = session_repository.save(session)
-    # return redirect ("members", all_members = members) this isincorrect, becasie redirects dont need arguments
     return redirect ("sessions")
 
 
@@ -60,7 +58,6 @@ def update_session(id):
     time = request.form['time']
     max_capacity = request.form['max_capacity']
     
-    # member = member_repository.select(member_id)
     session = Session(session_name, time, max_capacity, id)
     session_repository.update(session)
     return redirect("/sessions")

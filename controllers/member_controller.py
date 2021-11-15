@@ -28,11 +28,12 @@ def new_member_form():
 # This is adding a new member to the bookings total list of members.
 @members_blueprint.route("/members", methods=['POST'])
 def new_member():
+    print(request.form)
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     email = request.form['email']
-    # active_member = request.form['active_member']
-    active_member = request.form.get('active_member')
+    active_member = request.form['active_member']
+    # active_member = request.form.get('active_member')
 
 
     member = Member(first_name, last_name, email, active_member)
@@ -59,7 +60,7 @@ def edit_member(id):
 def update_member(id):
     first_name = request.form['first_name']
     last_name = request.form['last_name']
-    email = request.form['email']
+    email = request.form['email']    
     active_member = request.form['active_member']
     
     # member = member_repository.select(member_id)
